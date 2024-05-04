@@ -33,7 +33,7 @@ void init(){
 	for(int i=0;i<200;i++){
 		aaft[i]="                                                                ";
 	}
-	cout<<"ÇëËµ³ö´ÊµÄÊýÁ¿£º"; 
+	cout<<"Ã‡Ã«Ã‹ÂµÂ³Ã¶Â´ÃŠÂµÃ„ÃŠÃ½ÃÂ¿Â£Âº"; 
 	cin>>n;
 	srand(time(0));
 	while(cnt<=n){
@@ -63,27 +63,25 @@ int main(){
 	//0-117
 	init();
 	while(sum<=n){
-		cout<<"ÊäÈë1ÒÔ¿ªÒ»¸ö×ÖÄ¸£¬ÊäÈë2ÒÔ²ÂÒ»¸ö´Ê"<<endl;
-		cin>>mode;
+		cout<<"ÃŠÃ¤ÃˆÃ«1Ã’Ã”Â¿ÂªÃ’Â»Â¸Ã¶Ã—Ã–Ã„Â¸Â£Â¬ÃŠÃ¤ÃˆÃ«2Ã’Ã”Â²Ã‚Ã’Â»Â¸Ã¶Â´ÃŠ"<<endl;
+		mode=_getch();
 		if(mode=='1'){
-			cout<<"¿ªÊ²Ã´×ÖÄ¸£¿"<<endl;
-			cin>>f;
+			cout<<"Â¿ÂªÃŠÂ²ÃƒÂ´Ã—Ã–Ã„Â¸Â£Â¿"<<endl;
+			f=_getch();
 			system("cls");
 			if((find(yikai.begin(),yikai.end(),f) != yikai.end()) && firstkai==0){
-				cout<<"Õâ¸ö×ÖÄ¸ÒÑ¾­¿ª¹ý¿©~"<<endl;
+				cout<<"Ã•Ã¢Â¸Ã¶Ã—Ã–Ã„Â¸Ã’Ã‘Â¾Â­Â¿ÂªÂ¹Ã½Â¿Â©~"<<endl;
 				sayzm();
 			}else{
 				firstkai=0;
 				yikai.push_back(f);
-				cout<<"ÒÑ¿ª£º";
+				cout<<"Ã’Ã‘Â¿ÂªÂ£Âº";
 				for(int i=0;i<yikai.size();i++){
 					cout<<yikai[i]<<' ';
 				}
 				cout<<endl;
-				if(f>='1' && f<='9'){
-					kai(f);
-					sayzm();
-				}else if(f>='A' && f<='Z'){
+				
+				if(f>='A' && f<='Z'){
 					kai(f);
 					kai(char(f+'a'-'A'));
 					sayzm();
@@ -91,28 +89,31 @@ int main(){
 					kai(f);
 					kai(char(f-'a'+'A'));
 					sayzm();
+				}else if(int(f)>32 && int(f)<127){
+					kai(f);
+					sayzm();
 				}else{
-					cout<<"ÊäÈëÎÞÐ§£¡"<<endl;
+					cout<<"ÃŠÃ¤ÃˆÃ«ÃŽÃžÃÂ§Â£Â¡"<<endl;
 				}
 			}
 			
 		}else if(mode=='2'){
-			cout<<"ÇëÊäÈë±àºÅºÍÄã²ÂµÄ´Ê£¬±ØÐëÒ»×Ö²»²î"<<endl;
+			cout<<"Ã‡Ã«ÃŠÃ¤ÃˆÃ«Â±Ã ÂºÃ…ÂºÃÃ„Ã£Â²Ã‚ÂµÃ„Â´ÃŠÂ£Â¬Â±Ã˜ÃÃ«Ã’Â»Ã—Ã–Â²Â»Â²Ã®"<<endl;
 			cin>>guessb;
 			scanf("%c",&eat); 
 		 	getline(cin,guess);
 		 	if(abef[guessb]==guess){
-		 		cout<<"¹§Ï²Äã²Â¶ÔÁË£¡"<<endl;
+		 		cout<<"Â¹Â§ÃÂ²Ã„Ã£Â²Ã‚Â¶Ã”ÃÃ‹Â£Â¡"<<endl;
 		 		aaft[guessb]=abef[guessb];
 		 		sum++;
 			}else{
-				cout<<"¹§Ï²Äã²Â´íÁË£¡"<<endl;
+				cout<<"Â¹Â§ÃÂ²Ã„Ã£Â²Ã‚Â´Ã­ÃÃ‹Â£Â¡"<<endl;
 			}
 		}else{
-			cout<<"²»ÊÇ¸çÃÇ£¬ÄãÊäÈëµÄÊÇÉ¶£¿£¿"<<endl;
+			cout<<"Â²Â»ÃŠÃ‡Â¸Ã§ÃƒÃ‡Â£Â¬Ã„Ã£ÃŠÃ¤ÃˆÃ«ÂµÃ„ÃŠÃ‡Ã‰Â¶Â£Â¿Â£Â¿"<<endl;
 		}
 	}
-	cout<<"¹§Ï²°ÑÌâÈ«²¿²Â¶Ô£¡"<<endl;
+	cout<<"Â¹Â§ÃÂ²Â°Ã‘ÃŒÃ¢ÃˆÂ«Â²Â¿Â²Ã‚Â¶Ã”Â£Â¡"<<endl;
 	cout<<"Thanks for playing!"; 
 	return 0;
 }
